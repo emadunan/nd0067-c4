@@ -10,6 +10,18 @@ jobs:
       - node/install
       - checkout
       - run:
-          name: hello
+          name: Backend Install
           command: |
-            echo "hello-world"
+            npm run backend:install
+      - run:
+          name: Backend Build
+          command: |
+            npm run backend:build
+      - run:
+          name: Frontend Install
+          command: |
+            npm run frontend:install
+      - run:
+          name: Frontend Build
+          command: |
+            npm run frontend:build
