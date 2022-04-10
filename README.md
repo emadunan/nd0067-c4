@@ -1,15 +1,6 @@
 # Udagram
 
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
-
-## Getting Started
-
-1. Clone this repo locally into the location of your choice.
-1. Move the content of the udagram folder at the root of the repository as this will become the main content of the project.
-1. Open a terminal and navigate to the root of the repo
-1. follow the instructions in the installation step
-
-The project can run but is missing some information to connect to the database and storage service. These will be setup during the course of the project
+A Full-Stack web application where visitors can freely register without charges and post their feeds in the web application. The application consists of an Express API runs on Nodejs runtime and an Angular frontend application.
 
 ### Dependencies
 
@@ -26,15 +17,103 @@ The project can run but is missing some information to connect to the database a
 
 ```
 
-### Installation
+## Run Locally
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+POSTGRES_USERNAME=retailer 
+POSTGRES_PASSWORD=emadunan 
+POSTGRES_DB=retailer_db 
+DB_PORT=5432 
+POSTGRES_HOST=database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com 
+PORT=8080 
+AWS_REGION=us-east-1 
+AWS_PROFILE=eb-cli 
+AWS_BUCKET=udagram222 
+URL=udagram-api-dev222.us-east-1.elasticbeanstalk.com 
+JWT_SECRET=udacity 
+
+### Install Postgresql database engine
+
+#### PostgreSQL database engine configured to run on port 5432.
+
+#### Connect to the database as ***postgres***, and run the following commands to create and configure the required databases for development.
+
+##### Create database for the API project development
+
+```sql
+  CREATE DATABASE retailer_db;
+```
+
+##### Create database User and grants it the required privileges
+
+```sql
+  CREATE USER retailer WITH PASSWORD 'emadunan';
+  GRANT ALL PRIVILEGES ON DATABASE retailer_db TO retailer;
+```
+
+Clone the project
+
+```bash
+  git clone https://github.com/emadunan/nd0067-c4.git
+```
+
+Go to the project directory
+
+```bash
+  cd nd0067-c4/udagram-api
+```
+
+Install the API dependencies
+
+```bash
+  npm install
+```
+
+Start the application server
+
+```bash
+  npm run start
+```
+Return to the project directory
+
+```bash
+  cd nd0067-c4/udagram-frontend
+```
+
+Install frontend dependencies
+
+```bash
+  npm install
+```
+
+Start the web server
+
+```bash
+  npm run start
+```
+
+
+### AWS
 
 Provision the necessary AWS services needed for running the application:
 
-1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
+#### AWS RDS for the database: Endpoint "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" on Port "5432"
+![RDS screenshot](./documentation/screenshots/RDS_screenshot.png)
+
+#### AWS ElasticBeanstalk for the API [http://udagram-api-dev222.us-east-1.elasticbeanstalk.com](http://udagram-api-dev222.us-east-1.elasticbeanstalk.com)
+![RDS screenshot](./documentation/screenshots/EB_screenshot.png)
+
+
+#### AWS s3 for web hosting [http://udagram222.s3-website-us-east-1.amazonaws.com](http://udagram222.s3-website-us-east-1.amazonaws.com)
+![RDS screenshot](./documentation/screenshots/S3_screenshot.png)
+
+### CircleCI
+
+
+
 
 ## Testing
 
