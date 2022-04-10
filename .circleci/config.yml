@@ -12,7 +12,6 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-      - aws-elastic-beanstalk/setup
       - run:
           name: Backend Install
           command: |
@@ -30,10 +29,11 @@ jobs:
           command: |
             npm run frontend:build
       - run:
-          name: Backend Deploy
-          command: |
-            npm run backend:deploy
-      - run:
           name: Frontend Deploy
           command: |
             npm run frontend:deploy
+      # - aws-elastic-beanstalk/setup
+      # - run:
+      #     name: Backend Deploy
+      #     command: |
+      #       npm run backend:deploy
