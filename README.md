@@ -17,23 +17,45 @@ A Full-Stack web application where visitors can freely register without charges 
 
 ```
 
+### AWS
+
+Provision the necessary AWS services needed for running the application:
+
+#### AWS RDS for the database: Endpoint "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" on Port "5432"
+![RDS screenshot](./documentation/screenshots/RDS_screenshot.png)
+
+#### AWS ElasticBeanstalk for the API [http://udagram-api-dev222.us-east-1.elasticbeanstalk.com](http://udagram-api-dev222.us-east-1.elasticbeanstalk.com)
+![RDS screenshot](./documentation/screenshots/EB_screenshot.png)
+
+
+#### AWS s3 for web hosting [http://udagram222.s3-website-us-east-1.amazonaws.com](http://udagram222.s3-website-us-east-1.amazonaws.com)
+![RDS screenshot](./documentation/screenshots/S3_screenshot.png)
+
+### CircleCI
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot1.png)
+
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot2.png)
+
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot3.png)
+
+
 ## Run Locally
 
 ### Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-POSTGRES_USERNAME=retailer 
-POSTGRES_PASSWORD=emadunan 
-POSTGRES_DB=retailer_db 
-DB_PORT=5432 
-POSTGRES_HOST=database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com 
-PORT=8080 
-AWS_REGION=us-east-1 
-AWS_PROFILE=eb-cli 
-AWS_BUCKET=udagram222 
-URL=udagram-api-dev222.us-east-1.elasticbeanstalk.com 
-JWT_SECRET=udacity 
+- POSTGRES_USERNAME=retailer 
+- POSTGRES_PASSWORD=emadunan 
+- POSTGRES_DB=retailer_db 
+- DB_PORT=5432 
+- POSTGRES_HOST=database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com 
+- PORT=8080 
+- AWS_REGION=us-east-1 
+- AWS_PROFILE=eb-cli 
+- AWS_BUCKET=udagram222 
+- URL=udagram-api-dev222.us-east-1.elasticbeanstalk.com 
+- JWT_SECRET=udacity 
 
 ### Install Postgresql database engine
 
@@ -95,26 +117,6 @@ Start the web server
   npm run start
 ```
 
-
-### AWS
-
-Provision the necessary AWS services needed for running the application:
-
-#### AWS RDS for the database: Endpoint "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" on Port "5432"
-![RDS screenshot](./documentation/screenshots/RDS_screenshot.png)
-
-#### AWS ElasticBeanstalk for the API [http://udagram-api-dev222.us-east-1.elasticbeanstalk.com](http://udagram-api-dev222.us-east-1.elasticbeanstalk.com)
-![RDS screenshot](./documentation/screenshots/EB_screenshot.png)
-
-
-#### AWS s3 for web hosting [http://udagram222.s3-website-us-east-1.amazonaws.com](http://udagram222.s3-website-us-east-1.amazonaws.com)
-![RDS screenshot](./documentation/screenshots/S3_screenshot.png)
-
-### CircleCI
-
-
-
-
 ## Testing
 
 This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
@@ -122,8 +124,6 @@ This project contains two different test suite: unit tests and End-To-End tests(
 1. `cd starter/udagram-frontend`
 1. `npm run test`
 1. `npm run e2e`
-
-There are no Unit test on the back-end
 
 ### Unit Tests:
 
