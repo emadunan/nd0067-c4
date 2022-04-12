@@ -16,33 +16,30 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
-      - run:
-          name: Set environment variables
-          command: eb setenv JWT_SECRET=$JWT_SECRET
     # Install the application dependencies
-      # - run:
-      #     name: Backend Install
-      #     command: |
-      #       npm run backend:install
-      # - run:
-      #     name: Frontend Install
-      #     command: |
-      #       npm run frontend:install
+      - run:
+          name: Backend Install
+          command: |
+            npm run backend:install
+      - run:
+          name: Frontend Install
+          command: |
+            npm run frontend:install
     # Build the application components
-      # - run:
-      #     name: Backend Build
-      #     command: |
-      #       npm run backend:build
-      # - run:
-      #     name: Frontend Build
-      #     command: |
-      #       npm run frontend:build
+      - run:
+          name: Backend Build
+          command: |
+            npm run backend:build
+      - run:
+          name: Frontend Build
+          command: |
+            npm run frontend:build
     # Deploy the application
-      # - run:
-      #     name: Backend Deploy
-      #     command: |
-      #       npm run backend:deploy
-      # - run:
-      #     name: Frontend Deploy
-      #     command: |
-      #       npm run frontend:deploy
+      - run:
+          name: Backend Deploy
+          command: |
+            npm run backend:deploy
+      - run:
+          name: Frontend Deploy
+          command: |
+            npm run frontend:deploy
