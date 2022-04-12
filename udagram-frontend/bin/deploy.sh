@@ -1,1 +1,1 @@
-aws s3 cp --recursive --acl public-read ./www s3://udagram222/
+aws s3 cp --profile default --recursive --acl public-read ./www s3://udagram222/
