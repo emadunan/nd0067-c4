@@ -25,7 +25,7 @@ jobs:
           name: Frontend Install
           command: |
             npm run frontend:install
-    # Build the application compenents
+    # Build the application components
       - run:
           name: Backend Build
           command: |

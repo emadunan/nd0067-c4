@@ -4,23 +4,6 @@ A Full-Stack web application where visitors can freely register without charges 
 
 Here is the link for the frontend [Udagram Application](http://udagram222.s3-website-us-east-1.amazonaws.com).
 
-### Dependencies
-
-```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
-
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
-
-- AWS CLI v2, v1 can work but was not tested for this project
-
-- A RDS database running Postgres.
-
-- A S3 bucket for hosting uploaded pictures.
-
-```
-
-***
-
 ### **AWS** *services needed for running the application*:
 
 #### ***AWS RDS*** for the database: Endpoint "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" on Port "5432"
@@ -37,8 +20,74 @@ Here is the link for the frontend [Udagram Application](http://udagram222.s3-web
 
 ### CircleCI Pipeline with Github
 
-#### 
+#### Setup the secrets in CircleCi and send them to EB
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot1.png)
 
+#### Latest working CircleCi build
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot2.png)
+
+***
+
+# Udagram Application Infrastructure Description
+
+## Services need to run in order to deploy the application
+- AWS Relational Database Service (RDS)
+- AWS Elastic Beanstalk (EB)
+- AWS Simple Storage Service (S3)
+- CircleCI
+
+***
+
+### AWS Relational Database Service (RDS):
+Database environment that hosts a postgresql database engine version 13.4. The database endpoint is "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" and running on port 5432.
+![RDS screenshot](./documentation/screenshots/RDS_screenshot.png)
+
+***
+
+### AWS Elastic Beanstalk (EB):
+An application server that hosts a backend API for Udagram application with NodeJS version 16 running on 64bit Linux 2/5.5.1 platform. The API Url is [udagram-api-dev222.us-east-1.elasticbeanstalk.com](http://udagram-api-dev222.us-east-1.elasticbeanstalk.com)
+![RDS screenshot](./documentation/screenshots/EB_screenshot.png)
+
+***
+
+### AWS Simple Storage Service (S3):
+Amazone Storage Service that contains buckets for the backend application which is served by elastic beanstalk and the frontend Angular application served by S3.
+![RDS screenshot](./documentation/screenshots/S3_screenshot.png)
+
+***
+
+### CircleCI:
+A service for continues Integeration and continues deployment. CircleCI is connected to my github account and linked to the master branch to the Udagram application repository (nd0067)
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot3.png)
+
+***
+
+### Application Dependencies
+
+```
+- A RDS database engine 13.4 running Postgres on port 5432.
+
+- Node v16.15.1 Node.js 16 running on 64bit Amazon Linux 2/5.5.1.
+
+- npm 6.14.8 (LTS) or more recent.
+
+- AWS CLI v2.
+
+- A S3 bucket for hosting the Angular frontend application and the backend API hosted by Elastic Beanstalk Enivronment.
+
+```
+
+***
+
+# Pipeline Process
+-After pushing commited code to github repository, CircleCI detect the changes since it was previosly linked to the github repository, then execute pipelines as it was defined in the config.yml file as follows:
+- Preparing the environment
+- Install the Frontend and backend dependencies
+- Build the application components
+- Deploy the application
+![RDS screenshot](./documentation/diagrams/Pipeline_diagram.jpg)
+
+***
 
 ## Testing
 

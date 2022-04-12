@@ -1,14 +1,14 @@
 ### Application Dependencies
 
 ```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
+- A RDS database engine 13.4 running Postgres on port 5432.
 
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
+- Node v16.15.1 Node.js 16 running on 64bit Amazon Linux 2/5.5.1.
 
-- AWS CLI v2, v1 can work but was not tested for this project
+- npm 6.14.8 (LTS) or more recent.
 
-- A RDS database running Postgres.
+- AWS CLI v2.
 
-- A S3 bucket for hosting uploaded pictures.
+- A S3 bucket for hosting the Angular frontend application and the backend API hosted by Elastic Beanstalk Enivronment.
 
 ```
