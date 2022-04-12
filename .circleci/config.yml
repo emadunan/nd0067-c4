@@ -17,8 +17,8 @@ jobs:
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
       - run:
-          name: Fetch env variables
-          command: echo ${AWS_ACCESS_KEY_ID}
+          name: Set environment variables
+          command: eb setenv JWT_SECRET=$JWT_SECRET
     # Install the application dependencies
       # - run:
       #     name: Backend Install
