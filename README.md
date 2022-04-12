@@ -2,6 +2,8 @@
 
 A Full-Stack web application where visitors can freely register without charges and post their feeds in the web application. The application consists of an Express API runs on Nodejs runtime and an Angular frontend application.
 
+Here is the link for the frontend [Udagram Application](http://udagram222.s3-website-us-east-1.amazonaws.com).
+
 ### Dependencies
 
 ```
@@ -17,105 +19,26 @@ A Full-Stack web application where visitors can freely register without charges 
 
 ```
 
-### AWS
+***
 
-Provision the necessary AWS services needed for running the application:
+### **AWS** *services needed for running the application*:
 
-#### AWS RDS for the database: Endpoint "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" on Port "5432"
+#### ***AWS RDS*** for the database: Endpoint "database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com" on Port "5432"
 ![RDS screenshot](./documentation/screenshots/RDS_screenshot.png)
 
-#### AWS ElasticBeanstalk for the API [http://udagram-api-dev222.us-east-1.elasticbeanstalk.com](http://udagram-api-dev222.us-east-1.elasticbeanstalk.com)
+#### ***AWS ElasticBeanstalk*** for the API [http://udagram-api-dev222.us-east-1.elasticbeanstalk.com](http://udagram-api-dev222.us-east-1.elasticbeanstalk.com)
 ![RDS screenshot](./documentation/screenshots/EB_screenshot.png)
 
 
-#### AWS s3 for web hosting [http://udagram222.s3-website-us-east-1.amazonaws.com](http://udagram222.s3-website-us-east-1.amazonaws.com)
+#### ***AWS S3*** for web hosting [http://udagram222.s3-website-us-east-1.amazonaws.com](http://udagram222.s3-website-us-east-1.amazonaws.com)
 ![RDS screenshot](./documentation/screenshots/S3_screenshot.png)
 
-### CircleCI
-![RDS screenshot](./documentation/screenshots/CircleCI_screenshot1.png)
+***
 
-![RDS screenshot](./documentation/screenshots/CircleCI_screenshot2.png)
+### CircleCI Pipeline with Github
 
-![RDS screenshot](./documentation/screenshots/CircleCI_screenshot3.png)
+#### 
 
-
-## Run Locally
-
-### Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-- POSTGRES_USERNAME=retailer 
-- POSTGRES_PASSWORD=emadunan 
-- POSTGRES_DB=retailer_db 
-- DB_PORT=5432 
-- POSTGRES_HOST=database-1.c9pyylv2hx9y.us-east-1.rds.amazonaws.com 
-- PORT=8080 
-- AWS_REGION=us-east-1 
-- AWS_PROFILE=eb-cli 
-- AWS_BUCKET=udagram222 
-- URL=udagram-api-dev222.us-east-1.elasticbeanstalk.com 
-- JWT_SECRET=udacity 
-
-### Install Postgresql database engine
-
-#### PostgreSQL database engine configured to run on port 5432.
-
-#### Connect to the database as ***postgres***, and run the following commands to create and configure the required databases for development.
-
-##### Create database for the API project development
-
-```sql
-  CREATE DATABASE retailer_db;
-```
-
-##### Create database User and grants it the required privileges
-
-```sql
-  CREATE USER retailer WITH PASSWORD 'emadunan';
-  GRANT ALL PRIVILEGES ON DATABASE retailer_db TO retailer;
-```
-
-Clone the project
-
-```bash
-  git clone https://github.com/emadunan/nd0067-c4.git
-```
-
-Go to the project directory
-
-```bash
-  cd nd0067-c4/udagram-api
-```
-
-Install the API dependencies
-
-```bash
-  npm install
-```
-
-Start the application server
-
-```bash
-  npm run start
-```
-Return to the project directory
-
-```bash
-  cd nd0067-c4/udagram-frontend
-```
-
-Install frontend dependencies
-
-```bash
-  npm install
-```
-
-Start the web server
-
-```bash
-  npm run start
-```
 
 ## Testing
 
