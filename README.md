@@ -23,6 +23,9 @@ Here is the link for the frontend [Udagram Application](http://udagram222.s3-web
 #### Setup the secrets in CircleCi and send them to EB
 ![RDS screenshot](./documentation/screenshots/CircleCI_screenshot1.png)
 
+#### Passing the environment variables via CircleCI using "eb setenv"
+![RDS screenshot](./documentation/screenshots/CircleCI_screenshot4.png)
+
 #### Latest working CircleCi build
 ![RDS screenshot](./documentation/screenshots/CircleCI_screenshot2.png)
 
